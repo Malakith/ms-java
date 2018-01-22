@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="no-js ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+
+    <title>How Does an Engine Work? | Wonderopolis</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="https://wonderopolis.org/html/images/layout/favicon.ico">
+    <link rel="apple-touch-icon" href="https://wonderopolis.org/html/images/layout/apple-favicon.png">
+
+
+    <script src="https://wonderopolis.org/html/js/web-fonts.js"></script>
+
+    <!-- modernizr -->
+    <script src="https://wonderopolis.org/html/js/min/modernizr.custom.01216.min.js"></script>
+
+    <link rel="stylesheet" href="https://wonderopolis.org/html/css/normalize.css">
+    <link rel="stylesheet" href="https://wonderopolis.org/html/css/foundation.css?v3">
+    <link rel="stylesheet" href="https://wonderopolis.org/html/css/background.css">
+    <link rel="stylesheet" href="https://wonderopolis.org/html/css/style.css?v17">
+    <link rel="stylesheet" href="https://wonderopolis.org/html/css/dev.css?v12">
+
+    <script src="https://wonderopolis.org/html/js/min/jquery-1.11.1.min.js"></script>
+    <script src="https://wonderopolis.org/html/js/min/jquery.laziestloader.min.js"></script>
+
+    <script>
+
+        $(function() {
+
+            $('.lazy').laziestloader();
+
+            console.log('Hostname: web01.familieslearning.org');
+
+        });
+
+    </script>
+
+    <link rel="stylesheet" href="https://wonderopolis.org/html/css/wonder.css">
+    <script src="//f1-na.readspeaker.com/script/6717/ReadSpeaker.js?pids=embhl" type="text/javascript"></script>
+
+    <meta property="og:title" content="How Does an Engine Work?" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://wonderopolis.org/wonder/how-does-an-engine-work" />
+    <meta property="og:description" content="Ladies and gentlemen, start your engines! Then get over to Wonderopolis to discover what happens under the hood once you turn the key." />
+    <meta property="og:image" content="https://wonderopolis.org/wp-content/uploads/2010/12/Wonder-110-Engine-Static-Image2.jpg" />
+
+    <!--[if lte IE 8]><link rel="stylesheet" href="https://wonderopolis.org/html/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="https://wonderopolis.org/html/js/min/respond.min.js"></script><![endif]-->
+    <link rel="stylesheet" media="print" href="https://wonderopolis.org/html/css/print.css?v3">
+    <meta name="google-site-verification" content="yw5PVlzpWS1SnEJJ73KeFxQ4ffG-1YeWlmphJjLsI0g" />
+</head>
+
+
+<body>
+<div class="ctrlHolder msg success " id="subscribe-message" style="display: none;">
+    <p>We sent you SMS, for complete subscription please reply.</p>
+</div>
+<!-- Google Tag Manager -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59XP8R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-59XP8R');</script>
+<!-- End Google Tag Manager -->
+
+<!--[if lte IE 8]><p class="chromeframe"><strong>You are using an outdated browser.</strong><br/> <br/>Please <a href="http://browsehappy.com/">upgrade your browser</a> or
+    <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p><![endif]-->
+
+
+
+
+
+<div id="container" class="off-canvas-wrap web-page wonder-pg " data-offcanvas>
+
+
+    <div class="wrap inner-wrap">
+
+        <a class="exit-off-canvas"></a>
+        <div class="right-off-canvas-menu">
+            <div class="nav-wrap">
+                <form action="https://wonderopolis.org/wonders" class="header-search-form radius-form" method="get">
+                    <div class="row">
+            <span class="input-wrap">
+                <input class="radius" type="text" name="q" placeholder="Search Wonderopolis...">
+            </span>
+                        <span class="btn-wrap"><input type="submit" class="circle" value="submit"></span>
+                    </div>
+                </form>
+
+                <nav class="primary-nav">
+
+                    <ul>
+                        <li><a class="" href="https://wonderopolis.org"><b></b><span><span>Home</span></span></a></li>
+                        <li><a class="" href="https://wonderopolis.org/wonders"><b></b><span><span>Explore wonders</span></span></a></li>
+                        <li><a class="" href="https://wonderopolis.org/what-are-you-wondering"><b></b><span><span>What are you wondering?</span></span></a></li>
+                        <li><a class="play-btn" href="https://store.wonderopolis.org" target="_blank"><b></b><span><span>Wonderopolis Store</span></span></a></li>
+                        <li><a href="http://camp.wonderopolis.org" target="_blank"><b></b><span><span>Camp Wonderopolis</span></span></a></li>
+                        <li><a class="" href="https://wonderopolis.org/donate"><b></b><span><span>Donate</span></span></a></li>
+                    </ul>
+
+                </nav>
+
+                <div class="follow">
+                    <span>Follow</span>
+                    <ul>
+                        <li>
+                            <a class="twitter" href="https://twitter.com/wonderopolis" target="_blank">Twitter</a>
+                        </li>
+                        <li>
+                            <a class="instagram" href="https://www.instagram.com/wonderopolis/" target="_blank">Instagram</a>
+                        </li>
+                        <li>
+                            <a class="facebook" href="https://www.facebook.com/wonderopolis?v=wall&ref=sgm" target="_blank">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <nav class="secondary-nav">
+
+                    <ul class="inline-list right">
+                        <li><a class="" href="https://wonderopolis.org/about">About</a></li>
+                        <li><a class="" href="https://wonderopolis.org/wonder-jar">Wonder Jar</a></li>
+                        <li><a href="http://wg.wonderopolis.org" target="_blank">Wonder Ground</a></li>
+                        <li><a href="https://wonderopolis.org/donate">Donate</a></li>
+                        <li><a class="" href="https://wonderopolis.org/contact">Contact</a></li>
+                    </ul>
+
+                    <!-- New -->
+                    <ul class="inline-list right for-small">
+                        <li><a class="play-btn various fancybox.ajax" href="https://wonderopolis.org/html/inc/video.html">How It Works</a></li>
+                        <li><a href="http://camp.wonderopolis.org" target="_blank">Camp Wonderopolis</a></li>
+                        <li><a href="https://wonderopolis.org/donate">Donate</a></li>
+                        <li class=""><a href="https://wonderopolis.org/get-widget">Get Widget</a></li>
+                        <li class=""><a href="https://wonderopolis.org/media_room">Media Room</a></li>
+                        <li class=""><a href="https://wonderopolis.org/hotspots">Wonder Hotspots</a></li>
+                        <li><a href="https://wonderopolis.org/pages/legal-privacy">Legal & Privacy Policy</a></li>
+                    </ul>
+
+                </nav>
+
+            </div>        </div>
+
+        <div class="white-plate">
+            <header id="header">
+
+                <a href="https://wonderopolis.org" id="logo">
+		<span>
+<!--
+			<img class="default" src="https://wonderopolis.org/html/images/layout/logo.png" alt="Wonderopolis logo">
+			<img class="hover blue" src="https://wonderopolis.org/html/images/layout/logo_hover_red.png" alt="Wonderopolis logo">
+-->
+			<img src="https://wonderopolis.org/html/images/layout/logo.png" alt="Wonderopolis logo">
+		</span>
+                </a>
+
+                <a href="#" role="button" class="right-off-canvas-toggle">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </a>
+
+                <div id="navigation">
+
+                    <div class="nav-wrap">
+                        <form action="https://wonderopolis.org/wonders" class="header-search-form radius-form" method="get">
+                            <div class="row">
+            <span class="input-wrap">
+                <input class="radius" type="text" name="q" placeholder="Search Wonderopolis...">
+            </span>
+                                <span class="btn-wrap"><input type="submit" class="circle" value="submit"></span>
+                            </div>
+                        </form>
+
+                        <nav class="primary-nav">
+
+                            <ul>
+                                <li><a class="" href="https://wonderopolis.org"><b></b><span><span>Home</span></span></a></li>
+                                <li><a class="" href="https://wonderopolis.org/wonders"><b></b><span><span>Explore wonders</span></span></a></li>
+                                <li><a class="" href="https://wonderopolis.org/what-are-you-wondering"><b></b><span><span>What are you wondering?</span></span></a></li>
+                                <li><a class="play-btn" href="https://store.wonderopolis.org" target="_blank"><b></b><span><span>Wonderopolis Store</span></span></a></li>
+                                <li><a href="http://camp.wonderopolis.org" target="_blank"><b></b><span><span>Camp Wonderopolis</span></span></a></li>
+                                <li><a class="" href="https://wonderopolis.org/donate"><b></b><span><span>Donate</span></span></a></li>
+                            </ul>
+
+                        </nav>
+
+                        <div class="follow">
+                            <span>Follow</span>
+                            <ul>
+                                <li>
+                                    <a class="twitter" href="https://twitter.com/wonderopolis" target="_blank">Twitter</a>
+                                </li>
+                                <li>
+                                    <a class="instagram" href="https://www.instagram.com/wonderopolis/" target="_blank">Instagram</a>
+                                </li>
+                                <li>
+                                    <a class="facebook" href="https://www.facebook.com/wonderopolis?v=wall&ref=sgm" target="_blank">Facebook</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <nav class="secondary-nav">
+
+                            <ul class="inline-list right">
+                                <li><a class="" href="https://wonderopolis.org/about">About</a></li>
+                                <li><a class="" href="https://wonderopolis.org/wonder-jar">Wonder Jar</a></li>
+                                <li><a href="http://wg.wonderopolis.org" target="_blank">Wonder Ground</a></li>
+                                <li><a href="https://wonderopolis.org/donate">Donate</a></li>
+                                <li><a class="" href="https://wonderopolis.org/contact">Contact</a></li>
+                            </ul>
+
+                            <!-- New -->
+                            <ul class="inline-list right for-small">
+                                <li><a class="play-btn various fancybox.ajax" href="https://wonderopolis.org/html/inc/video.html">How It Works</a></li>
+                                <li><a href="http://camp.wonderopolis.org" target="_blank">Camp Wonderopolis</a></li>
+                                <li><a href="https://wonderopolis.org/donate">Donate</a></li>
+                                <li class=""><a href="https://wonderopolis.org/get-widget">Get Widget</a></li>
+                                <li class=""><a href="https://wonderopolis.org/media_room">Media Room</a></li>
+                                <li class=""><a href="https://wonderopolis.org/hotspots">Wonder Hotspots</a></li>
+                                <li><a href="https://wonderopolis.org/pages/legal-privacy">Legal & Privacy Policy</a></li>
+                            </ul>
+
+                        </nav>
+
+                    </div>
+                </div>
+
+            </header>
+
+        </div>
+        <!-- .white-plate end -->
+
+        <main id="main">
+
+            <section id="day-wonder" class="color-scheme-4 clearfix">
+
+                <header class="page-header">
+
+                    <div class="row">
+                        <p>Wonder of the Day <strong>#110</strong></p>
+                        <h1>How Does an Engine Work?</h1>
+                        <div class="comments">
+                            <a class="fnc-scroll-comments" href="#comment-container">36 Comments</a>
+                        </div>
+                        <a href="https://wonderopolis.org/wonder/what-is-a-zamboni" class="prev rs_skip">Previous wonder</a>
+                        <a href="https://wonderopolis.org/wonder/why-are-lemons-sour" class="next rs_skip">Next wonder</a>
+                    </div>
+
+                    <a class="print-save" href="javascript:if(window.print)window.print()"><span>Print/Save as PDF</span></a>
+
+                </header>
+
+                <div class="intro">
+
+                    <div class="row">
+
+                        <figure>
+                            <img src="/_img?img=/wp-content/uploads/2010/12/Wonder-110-Engine-Static-Image2.jpg&transform=resizeCrop,720,450" alt="">
+                        </figure>
+
+                        <p class="rs_skip">
+                            <a href="https://wonderopolis.org/wonders?category=technology">TECHNOLOGY</a>                       — <a href="https://wonderopolis.org/wonders?sub_category=inventions">Inventions</a>                 </p>
+                        <h2>Have You Ever Wondered...</h2>
+
+                        <ul>
+                            <li>How does an engine work?</li>
+                            <li>What is internal combustion?</li>
+                            <li>What are the four phases of the combustion cycle?</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="tag-wrap">
+                        <h4>Tags:</h4>
+                        <a href="#" class="fnc-show-all-tag">See All Tags</a>
+
+                        <ul class="detail-tags rs_skip">
+                            <li><a href="https://wonderopolis.org/wonders?tag=catalytic-converter">catalytic converter</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=combustion">combustion</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=compression">compression</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=engine">engine</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=exhaust">exhaust</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=explosion">explosion</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=fuel">fuel</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=intake">intake</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=muffler">muffler</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=piston">piston</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=valve">valve</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=science">Science</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=technology">Technology</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=transportation">Transportation</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=car">Car</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=hood">Hood</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=gasoline">Gasoline</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=motion">Motion</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=gas">Gas</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=internal-combustion">Internal Combustion</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=power">Power</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=energy">Energy</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=cycle">Cycle</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=four-stroke">Four-Stroke</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=air">Air</a>,</li>
+                            <li><a href="https://wonderopolis.org/wonders?tag=spark-plug">Spark Plug</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="wrap main-content gal-size-5">
+
+                    <div class="bg rs-skip "></div>
+
+                    <article>
+
+                        <div class="contributors rs-skip ">
+                            <p>Today’s Wonder of the Day was inspired by Eddie. <em>Eddie Wonders</em>, “<strong>how does an engine work on a car</strong>” Thanks for WONDERing with us, Eddie!</p>
+
+                        </div>
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="Listen to this page using ReadSpeaker" href="//app-na.readspeaker.com/cgi-bin/rsent?customerid=6717&amp;lang=en_us&amp;readid=day-wonder&amp;url=https%3A%2F%2Fwonderopolis.org%2Fwonder%2Fhow-does-an-engine-work/false/true/">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>Listen</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div>
+                        <p class="intro">You already know starting a <a href="http://wonderopolis.org/wonder/who-invented-the-automobile" target="_blank">car </a>is as easy as turning a <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-key" title="metal device shaped in such a way that when it is inserted into the appropriate lock the lock's mechanism can be rotated">key</span></a>, but have you ever wondered what really happens <a href="http://wonderopolis.org/wonder/why-do-you-change-the-oil-in-cars" target="_blank">under the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-hood" title="protective covering consisting of a hinged metal part that covers the engine">hood</span></a></a>?</p><p>When your body needs <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-fuel" title="a substance that can be consumed to produce energy">fuel</span></a>, you feed it food. When your car needs <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-fuel" title="a substance that can be consumed to produce energy">fuel</span></a>, you “feed" it <a href="http://wonderopolis.org/wonder/what-is-gasoline-made-of" target="_blank">gasoline</a>. Just like your body converts food into energy, a car engine converts gas into <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-motion" title="the action or process of moving or being moved">motion</span></a>. Some newer cars, known as <a href="http://wonderopolis.org/wonder/what-is-a-hybrid" target="_blank">hybrids</a>, also use electricity from batteries to help <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-propel" title="cause to move forward with force">propel</span></a> a vehicle.</p><p>The process of converting gasoline into <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-motion" title="the action or process of moving or being moved">motion</span></a> is called "internal <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-combustion" title="a process in which a substance reacts with oxygen to give heat and light">combustion</span></a>." Internal <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-combustion" title="a process in which a substance reacts with oxygen to give heat and light">combustion</span></a> engines use small, controlled explosions to <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-generate" title="bring into existence">generate</span></a> the power needed to move your car all the places it needs to go.</p><p>If you create an <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-explosion" title="a violent release of energy caused by a chemical or nuclear reaction">explosion</span></a> in a tiny, <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-enclosed" title="closed in or surrounded or included within">enclosed</span></a> space, such as a <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-piston" title="a part of an engine or some other machine that moves up and down within a tight sleeve in order to make the machine work.">piston</span></a> in an engine, a huge amount of energy is released as expanding gas. A typical <a href="http://wonderopolis.org/wonder/how-are-cars-made" target="_blank">car </a>engine creates such explosions hundreds of times per minute. The engine harnesses the energy and uses it to <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-propel" title="cause to move forward with force">propel</span></a> your car.</p><p>The explosions force pistons in the engine to move. When the energy from the first <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-explosion" title="a violent release of energy caused by a chemical or nuclear reaction">explosion</span></a> has almost run out, another <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-explosion" title="a violent release of energy caused by a chemical or nuclear reaction">explosion</span></a> occurs. This forces the pistons to move again. The cycle continues again and again, giving the car the power needed to run.</p><p>Car engines use a four-<a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-stroke" title="the maximum movement available to a pivoted or reciprocating piece by a cam">stroke</span></a> <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-combustion" title="a process in which a substance reacts with oxygen to give heat and light">combustion</span></a> cycle. The four strokes are <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-intake" title="the phase during which gas is taken into an engine">intake</span></a>, <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-compression" title="the reduction in volume and increase in pressure of air or air mixed with fuel in the cylinder of an internal combustion engine prior to ignition, or the engine cycle in which this process takes place">compression</span></a>, <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-combustion" title="a process in which a substance reacts with oxygen to give heat and light">combustion</span></a>, and <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-exhaust" title="the smoke or gas given off by an engine">exhaust</span></a>. The strokes are repeated over and over, generating power. Let's take a closer look at what happens during each phase of the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-combustion" title="a process in which a substance reacts with oxygen to give heat and light">combustion</span></a> cycle.</p><p><strong><a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-intake" title="the phase during which gas is taken into an engine">Intake</span></a>:</strong> During the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-intake" title="the phase during which gas is taken into an engine">intake</span></a> cycle, the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-intake" title="the phase during which gas is taken into an engine">intake</span></a> <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-valve" title="control consisting of a mechanical device for controlling the flow of a fluid or gas">valve</span></a> opens, and the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-piston" title="a part of an engine or some other machine that moves up and down within a tight sleeve in order to make the machine work.">piston</span></a> moves down. This begins the cycle by bringing air and gas into the engine.</p><p><strong><a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-compression" title="the reduction in volume and increase in pressure of air or air mixed with fuel in the cylinder of an internal combustion engine prior to ignition, or the engine cycle in which this process takes place">Compression</span></a>:</strong> As the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-compression" title="the reduction in volume and increase in pressure of air or air mixed with fuel in the cylinder of an internal combustion engine prior to ignition, or the engine cycle in which this process takes place">compression</span></a> cycle begins, the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-piston" title="a part of an engine or some other machine that moves up and down within a tight sleeve in order to make the machine work.">piston</span></a> moves up and pushes the air and gas into a smaller space. A smaller space means a more powerful <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-explosion" title="a violent release of energy caused by a chemical or nuclear reaction">explosion</span></a>.</p><p><strong><a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-combustion" title="a process in which a substance reacts with oxygen to give heat and light">Combustion</span></a>:</strong> Next, the spark plug creates a spark that ignites and explodes the gas. The power of the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-explosion" title="a violent release of energy caused by a chemical or nuclear reaction">explosion</span></a> forces the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-piston" title="a part of an engine or some other machine that moves up and down within a tight sleeve in order to make the machine work.">piston</span></a> back down.</p><p><strong><a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-exhaust" title="the smoke or gas given off by an engine">Exhaust</span></a>:</strong> During the last part of the cycle, the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-exhaust" title="the smoke or gas given off by an engine">exhaust</span></a> <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-valve" title="control consisting of a mechanical device for controlling the flow of a fluid or gas">valve</span></a> opens to release waste gas created by the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-explosion" title="a violent release of energy caused by a chemical or nuclear reaction">explosion</span></a>. This gas is moved to the catalytic converter, where it is cleaned, and then through the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-muffler" title="a tubular acoustic device inserted in the exhaust system that is designed to reduce noise">muffler</span></a> before it exits the vehicle through the <a href="#" class="word"><span data-tooltip aria-haspopup="true" class="has-tip fnc-w-tailpipe" title="a pipe carrying fumes from the muffler to the rear of a car">tailpipe</span></a>.</p>
+
+
+
+                    </article>
+
+                    <aside>
+                        <ul class="cascade rs_skip">
+                            <li class="video-thumb">
+                                <a class="video fancybox fancybox.ajax" rel="gallery1" href="https://wonderopolis.org/wonder_video/Vimeo/109446550">
+                        <span>
+                                <img src="/_img?img=/wp-content/uploads/video_thumbs/109446550.jpg&transform=resizeCrop,280,186" alt="">
+                        </span>
+                                </a>
+                            </li>
+                            <li><a class="fancybox" rel="gallery1" href="https://wonderopolis.org/wp-content/uploads/2016/03/dreamstime_xl_29655903_(Custom).jpg"><span><img src="/_img?img=/wp-content/uploads/2016/03/dreamstime_xl_29655903_(Custom).jpg&transform=resizeCrop,280,186" alt=""></span></a></li>
+                            <li><a class="fancybox" rel="gallery1" href="https://wonderopolis.org/wp-content/uploads/2016/03/dreamstime_xl_38344545_(Custom).jpg"><span><img src="/_img?img=/wp-content/uploads/2016/03/dreamstime_xl_38344545_(Custom).jpg&transform=resizeCrop,280,186" alt=""></span></a></li>
+                            <li><a class="fancybox" rel="gallery1" href="https://wonderopolis.org/wp-content/uploads/2016/03/dreamstime_xl_41884084_(Custom).jpg"><span><img src="/_img?img=/wp-content/uploads/2016/03/dreamstime_xl_41884084_(Custom).jpg&transform=resizeCrop,280,186" alt=""></span></a></li>
+                            <li><a class="fancybox" rel="gallery1" href="https://wonderopolis.org/wp-content/uploads/2017/04/Engine_dreamstime_xl_8869504.jpg"><span><img src="/_img?img=/wp-content/uploads/2017/04/Engine_dreamstime_xl_8869504.jpg&transform=resizeCrop,280,186" alt=""></span></a></li>
+                        </ul>
+
+
+                        <div class="banners show-for-big">
+                        </div>
+
+                        <div class="wonder-contributors-block show-for-big rs_skip">
+                            <div class="inner">
+                                <h3>Wonder Contributors</h3>
+                                <p class="thanks">We’d like to thank:</p>
+                                <p>																			<span>Chaz</span>, 																																				<span>kaden</span>, 																																				<span>elizabeth</span>, 																																				<span>Elena</span>, and 																																				<span>Crystal</span>																									<br/> for contributing questions about today’s Wonder topic!
+                                </p>
+                                <p class="keep-wondering">Keep WONDERing with us!</p>
+                                <a class="button" href="https://wonderopolis.org/what-are-you-wondering">What are you wondering?</a>
+                            </div>
+                        </div>
+
+                        <div id="sticky" class="rs_skip">
+                            <div class="wonder-words show-for-big">
+                                <h3>Wonder Words (18)</h3>
+                                <ul class="word-list">
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-combustion" class="fnc-list" title="a process in which a substance reacts with oxygen to give heat and light">combustion</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-fuel" class="fnc-list" title="a substance that can be consumed to produce energy">fuel</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-explosion" class="fnc-list" title="a violent release of energy caused by a chemical or nuclear reaction">explosion</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-generate" class="fnc-list" title="bring into existence">generate</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-enclosed" class="fnc-list" title="closed in or surrounded or included within">enclosed</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-piston" class="fnc-list" title="a part of an engine or some other machine that moves up and down within a tight sleeve in order to make the machine work.">piston</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-harness" class="fnc-list" title="exploit the power of">harness</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-propel" class="fnc-list" title="cause to move forward with force">propel</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-stroke" class="fnc-list" title="the maximum movement available to a pivoted or reciprocating piece by a cam">stroke</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-intake" class="fnc-list" title="the phase during which gas is taken into an engine">intake</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-compression" class="fnc-list" title="the reduction in volume and increase in pressure of air or air mixed with fuel in the cylinder of an internal combustion engine prior to ignition, or the engine cycle in which this process takes place">compression</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-exhaust" class="fnc-list" title="the smoke or gas given off by an engine">exhaust</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-valve" class="fnc-list" title="control consisting of a mechanical device for controlling the flow of a fluid or gas">valve</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-muffler" class="fnc-list" title="a tubular acoustic device inserted in the exhaust system that is designed to reduce noise">muffler</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-tailpipe" class="fnc-list" title="a pipe carrying fumes from the muffler to the rear of a car">tailpipe</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-key" class="fnc-list" title="metal device shaped in such a way that when it is inserted into the appropriate lock the lock's mechanism can be rotated">key</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-hood" class="fnc-list" title="protective covering consisting of a hinged metal part that covers the engine">hood</span></a></li>
+                                    <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-motion" class="fnc-list" title="the action or process of moving or being moved">motion</span></a></li>
+                                </ul>
+                                <a href="#WordChallenge" class="various button green">Take the Wonder Word Challenge</a>
+                            </div>
+                        </div>
+
+                        <div class="did-you-get-it show-for-big rs_skip">
+                            <h3>Did you get it?</h3>
+                            <a href="#Quiz" class="various button white">Test your knowledge</a>
+                        </div>
+                    </aside>
+
+
+
+                    <div class="what-next">
+                        <h4>Wonder What's Next?</h4>
+                        <p>You might want to think twice before swimming with tomorrow’s Wonder of the Day!</p>
+                    </div>
+
+                </div>
+
+                <div class="wrap">
+
+                    <div class="article-bottom">
+
+                        <div class="row">
+                            <h2>Try It Out</h2>
+                            <p>Have you got your engines revved up? Be sure to explore the following activities with a friend or family member:</p><ul><li>Do you know the parts of a car? Jump online to check out the <a href="http://www.infovisual.info/05/002_en.html" target="_blank">Anatomy of an Automobile</a>. Learn more about the parts of a car and what they do. Can you identify each part on your family vehicle?</li><li>If you really want to learn more about engines, ask an adult friend or family member to pop the hood on the family car, so you can get a closer look at the engine. Can you believe how many parts there are in a modern engine? If possible, compare the engine in your family vehicle to another type of engine, such as that found on a lawnmower.</li><li>With today's modern technology, engines are changing to support multiple fuel sources. What will engines be like when you're old enough to drive? To learn more, check out NOVA's <a href="http://www.pbs.org/wgbh/nova/education/activities/3507_car.html" target="_blank">Car of the Future</a> activity online. Do you think a hybrid or electric vehicle is in your future? Why or why not?</li></ul>
+
+                            <div class="wonder-sources-block rs_skip">
+                                <div class="inner">
+                                    <h3>Wonder Sources</h3>
+                                    <ul><li><span></span><a href="http://auto.howstuffworks.com/engine1.htm" target="_blank">http://auto.howstuffworks.com/engine1.htm</a></li><li><a href="http://www.wisegeek.com/how-does-a-car-engine-work.htm" target="_blank">http://www.wisegeek.com/how-does-a-car-engine-work.htm</a></li></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="banners show-for-small">
+                    </div>
+
+                    <div class="did-you-get-it show-for-small rs_skip">
+                        <h3>Did you get it?</h3>
+                        <a href="#Quiz" class="various button white">Test your knowledge</a>
+                    </div>
+
+
+
+                    <div class="wonder-contributors-block show-for-small rs_skip">
+                        <div class="inner">
+                            <h3>Wonder Contributors</h3>
+                            <p class="thanks">We’d like to thank:</p>
+                            <p>
+                                <span>Chaz</span>,                                                                                                                                 <span>kaden</span>,                                                                                                                                 <span>elizabeth</span>,                                                                                                                                 <span>Elena</span> and                                                                                                                                 <span>Crystal</span>                                                                                        <br/> for contributing questions about today’s Wonder topic!
+                            </p>
+                            <p class="keep-wondering">Keep WONDERing with us!</p>
+                            <a class="button" href="https://wonderopolis.org/what-are-you-wondering">What are you wondering?</a>
+                        </div>
+                    </div>
+
+
+                    <div class="wonder-words show-for-small rs_skip">
+                        <h3>Wonder Words</h3>
+                        <ul class="word-list">
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-combustion" class="fnc-list" title="a process in which a substance reacts with oxygen to give heat and light">combustion</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-fuel" class="fnc-list" title="a substance that can be consumed to produce energy">fuel</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-explosion" class="fnc-list" title="a violent release of energy caused by a chemical or nuclear reaction">explosion</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-generate" class="fnc-list" title="bring into existence">generate</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-enclosed" class="fnc-list" title="closed in or surrounded or included within">enclosed</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-piston" class="fnc-list" title="a part of an engine or some other machine that moves up and down within a tight sleeve in order to make the machine work.">piston</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-harness" class="fnc-list" title="exploit the power of">harness</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-propel" class="fnc-list" title="cause to move forward with force">propel</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-stroke" class="fnc-list" title="the maximum movement available to a pivoted or reciprocating piece by a cam">stroke</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-intake" class="fnc-list" title="the phase during which gas is taken into an engine">intake</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-compression" class="fnc-list" title="the reduction in volume and increase in pressure of air or air mixed with fuel in the cylinder of an internal combustion engine prior to ignition, or the engine cycle in which this process takes place">compression</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-exhaust" class="fnc-list" title="the smoke or gas given off by an engine">exhaust</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-valve" class="fnc-list" title="control consisting of a mechanical device for controlling the flow of a fluid or gas">valve</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-muffler" class="fnc-list" title="a tubular acoustic device inserted in the exhaust system that is designed to reduce noise">muffler</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-tailpipe" class="fnc-list" title="a pipe carrying fumes from the muffler to the rear of a car">tailpipe</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-key" class="fnc-list" title="metal device shaped in such a way that when it is inserted into the appropriate lock the lock's mechanism can be rotated">key</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-hood" class="fnc-list" title="protective covering consisting of a hinged metal part that covers the engine">hood</span></a></li>
+                            <li><a class="word-in-list" href="#"><span data-tooltip aria-haspopup="true" data-w-selector="fnc-w-motion" class="fnc-list" title="the action or process of moving or being moved">motion</span></a></li>
+                        </ul>
+                        <a href="#WordChallenge" class="various button green">Take the Wonder Word Challenge</a>
+                    </div>
+
+                    <footer class="article-footer">
+
+                        <div class="rate-block block rs_skip">
+                            <h5>Rate this wonder</h5>
+                            <div class="rate">
+                                <input name="star1" type="radio" value="1" class="star auto-submit-star"  >
+                                <input name="star1" type="radio" value="2" class="star auto-submit-star"  >
+                                <input name="star1" type="radio" value="3" class="star auto-submit-star"  >
+                                <input name="star1" type="radio" value="4" class="star auto-submit-star"   checked="checked" >
+                                <input name="star1" type="radio" value="5" class="star auto-submit-star"  >
+                            </div>
+                            <span class="rating-info"></span>
+
+
+                        </div>
+
+                        <div class="comments-block block rs_skip">
+                            <h5>Join the discussion</h5>
+                            <div class="comments">
+                                <a class="show-comments" href="#">36 Comments</a>
+                            </div>
+                        </div>
+
+                        <div class="share-block block rs_skip">
+                            <h5>Share this wonder</h5>
+                            <div class="add-this-plugin">
+                                <a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=https://wonderopolis.org/wonder/how-does-an-engine-work&pubid=ra-553a3869648acb18&title=How Does an Engine Work?" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
+                                <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=https://wonderopolis.org/wonder/how-does-an-engine-work&pubid=ra-553a3869648acb18&title=How Does an Engine Work?" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
+                                <a href="https://api.addthis.com/oexchange/0.8/forward/pinterest/offer?url=https://wonderopolis.org/wonder/how-does-an-engine-work&pubid=ra-553a3869648acb18&title=How Does an Engine Work?" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/pinterest.png" border="0" alt="Pinterest"/></a>
+                                <a href="https://www.addthis.com/bookmark.php?url=https://wonderopolis.org/wonder/how-does-an-engine-work&pubid=ra-553a3869648acb18&title=How Does an Engine Work?" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/addthis.png" border="0" alt="Addthis"/></a>
+                            </div>
+                        </div>
+
+                    </footer>
+
+                </div>
+                <div id="comment-container" style="display: none;">
+
+                    <div class="wrap" id="comments">
+
+                        <div class="comment-button-wrap">
+                            <a href="#" class="button green show-form">Join the Discussion</a>
+                        </div>
+
+                        <div class="comment-item" id="C1467447">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/206e8313c1155837da6371c8373fd412?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>lila</h3>
+                                    <time datetime="2017-10-30 13:26:15">Oct 30, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p>thanks this website really helped me with my paper</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1467447" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1467447" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1467447"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1467569">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2017-11-01 00:23:39">Nov 1, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p><p>We're happy to help, lila!!!&nbsp;😃</p></p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1467569" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1467569" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1467569"></div>
+                        </div>
+                        <div class="comment-item" id="C1466954">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/ca7e22db6b429e52f002b0f5d9a9324d?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Dude</h3>
+                                    <time datetime="2017-10-24 22:43:44">Oct 24, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p>It isn't really that helpful because it only says the most basic thing possible about how the engine works</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1466954" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1466954" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1466954"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1467206">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2017-10-27 00:17:53">Oct 27, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p><p>This Wonder is an introduction to&nbsp;the topic of how an engine works - there is certainly more information out there, and we encourage all of our Wonder Friends to do more research on&nbsp;their own if they find this topic interesting!!&nbsp;Thanks for sharing, Dude!</p></p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1467206" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1467206" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1467206"></div>
+                        </div>
+                        <div class="comment-item" id="C1463197">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/59f0ef490ab8f90270c427001d8191aa?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Jim</h3>
+                                    <time datetime="2017-08-03 14:06:27">Aug 3, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p>Love this website!!!
+                                    </p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1463197" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1463197" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1463197"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1463226">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2017-08-08 08:22:24">Aug 8, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p><p>Thanks, Jim! &nbsp;So glad you are WONDERing with us!&nbsp;👍</p></p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1463226" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1463226" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1463226"></div>
+                        </div>
+                        <div class="comment-item" id="C1456241">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/51437f5a5869ae467b241a084abad075?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>gabriel maza</h3>
+                                    <time datetime="2017-04-05 18:39:06">Apr 5, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p>does an  engine explode</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1456241" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1456241" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1456241"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1456300">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2017-04-06 09:53:19">Apr 6, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p><p>The entire engine does not explode, but there is an explosion that occurs that makes the engine work. &nbsp;Double-check the article again for the explanation. &nbsp;Thanks for asking that question!</p></p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1456300" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1456300" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1456300"></div>
+                        </div>
+                        <div class="comment-item" id="C1450489">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/34a3cb282edbcda41c364789767dcda3?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Jaycee</h3>
+                                    <time datetime="2017-02-22 12:04:34">Feb 22, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p>how does a car engine gets energy from an explosion </p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1450489" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1450489" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1450489"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1450549">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2017-02-22 14:49:48">Feb 22, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p><p>Great question, Jaycee! &nbsp;Check the article again and see if that explanation helps.&nbsp;&nbsp;If not, try one of the links or see if you can do a little extra digging to find out. &nbsp;Let us know how it goes!😃</p></p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1450549" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1450549" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1450549"></div>
+                        </div>
+                        <div class="comment-item" id="C1449306">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/254fa50c1ca39c5620cefb4bdb8656e0?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Ash</h3>
+                                    <time datetime="2017-02-10 11:35:45">Feb 10, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p>Hullo wonderpeople</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1449306" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1449306" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1449306"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1449450">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2017-02-13 14:02:43">Feb 13, 2017</time>
+                                </div>
+                                <div class="message">
+                                    <p><p>Hi, Ash! &nbsp;Super cool name, by the way. &nbsp;Have you been WONDERing with us for awhile?</p></p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1449450" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1449450" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1449450"></div>
+                        </div>
+                        <div class="comment-item" id="C1417263">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Eva</h3>
+                                    <time datetime="2016-02-25 10:36:47">Feb 25, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>Why are there two things of everything in a race car?
+                                    </p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1417263" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1417263" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1417263"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1422049">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2016-04-03 00:00:36">Apr 3, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>Great question, Eva! We encourage you to keep researching and learning about race cars! We're sure you can find lots of info at your library and online! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1422049" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1422049" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1422049"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1421791">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/24978dcb393fa23619ae238fb124d118?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Sonja</h3>
+                                    <time datetime="2016-03-31 12:07:27">Mar 31, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>hi</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1421791" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1421791" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1421791"></div>
+                        </div>
+                        <div class="comment-item reply reply2" id="C1423536">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/3e2c52536e8f6d824adfc42e816cb9f5?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>NaKayla</h3>
+                                    <time datetime="2016-04-15 10:13:24">Apr 15, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>im am a girl
+
+                                        so i like dresses</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1423536" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1423536" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1423536"></div>
+                        </div>
+                        <div class="comment-item reply reply3" id="C1423759">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2016-04-18 10:30:55">Apr 18, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>Hi, NaKayla! Thanks for joining the conversation! If you like dresses, we're sure you'll love <a href="http://wonderopolis.org/wonder/what-do-you-wear-to-a-wedding"_blank">Wonder #994: What Do You Wear to a Wedding?</a> Have fun WONDERing! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1423759" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1423759" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1423759"></div>
+                        </div>
+                        <div class="comment-item reply reply2" id="C1417697">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2016-02-28 22:10:01">Feb 28, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>Hi, Eva! That's a very interesting question! We encourage you to keep researching about race cars! Have fun! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1417697" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1417697" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1417697"></div>
+                        </div>
+                        <div class="comment-item" id="C1413658">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/ffa64fbb9772c1a8c23b4bb2495fe039?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Hello</h3>
+                                    <time datetime="2016-01-29 09:53:57">Jan 29, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>This didn`t help at all... thanks for nothing</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1413658" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1413658" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1413658"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1413885">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2016-01-31 22:44:12">Jan 31, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>Hello, Wonder Friend! We're sorry you didn't like this Wonder! Luckily, there are more than 1,600 other Wonders you can explore on Wonderopolis! We hope you visit again soon! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1413885" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1413885" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1413885"></div>
+                        </div>
+                        <div class="comment-item" id="C1403024">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/070969294717a5b4d242c1b90b4d6d33?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Rashmi Desai</h3>
+                                    <time datetime="2015-10-18 15:07:14">Oct 18, 2015</time>
+                                </div>
+                                <div class="message">
+                                    <p>I would like to share one of the best infographic to understand this concept.
+                                        Check it out at - http://btechlife.com/how-an-engine-works-animated-infographic/</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1403024" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1403024" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1403024"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1403129">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2015-10-20 12:15:06">Oct 20, 2015</time>
+                                </div>
+                                <div class="message">
+                                    <p>Thanks for sharing, Rashmi! This is a GREAT infographic to help explain how an engine works. Visuals are always helpful! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1403129" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1403129" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1403129"></div>
+                        </div>
+                        <div class="comment-item" id="C1397291">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/23219323239a2531411ddefc478ab70f?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Quinn M</h3>
+                                    <time datetime="2015-05-25 16:34:43">May 25, 2015</time>
+                                </div>
+                                <div class="message">
+                                    <p>I'm glad I read this article I learned a lot about engines!</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1397291" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1397291" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1397291"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1397302">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2015-05-26 00:43:39">May 26, 2015</time>
+                                </div>
+                                <div class="message">
+                                    <p>WONDERful, Quinn M! We're glad you're WONDERing with us on this Memorial Day! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1397302" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1397302" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1397302"></div>
+                        </div>
+                        <div class="comment-item" id="C1381661">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/d6990bda13f27ec720b4403b06c2d255?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>StingJam</h3>
+                                    <time datetime="2015-05-09 18:44:03">May 9, 2015</time>
+                                </div>
+                                <div class="message">
+                                    <p>This article is actually wrong. Its incorrect to refer to 'combustion' as an explosion. Please have a look at the wikipedia definitions of the words 'combustion' and 'explosion'. Many people erroneously believe the words are interchangeable, but a quick look at properly vetted sources of information will point out that they are two different scientific processes that only sometimes seem to intersect. In any physics exam, be warned that putting the answer you have here would get you failed!!</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1381661" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1381661" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1381661"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1419391">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>jon</h3>
+                                    <time datetime="2016-03-10 09:15:17">Mar 10, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>they didnt say it was an explosion they said it was like an explosion
+                                    </p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1419391" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1419391" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1419391"></div>
+                        </div>
+                        <div class="comment-item reply reply2" id="C1419833">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="/_img?img=/wp-content/uploads/users/ncfladmin-11.png.jpeg&transform=resizeCrop,64,64" alt="">
+                    </span>
+                                    <h3>Wonderopolis </h3>
+                                    <time datetime="2016-03-13 19:45:59">Mar 13, 2016</time>
+                                </div>
+                                <div class="message">
+                                    <p>That's very true, jon! Thanks for joining the discussion! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1419833" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1419833" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1419833"></div>
+                        </div>
+                        <div class="comment-item reply reply2" id="C1389040">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/9232aee3b0e5641a92f7e079afe53f26?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Wonderopolis</h3>
+                                    <time datetime="2015-05-12 17:32:05">May 12, 2015</time>
+                                </div>
+                                <div class="message">
+                                    <p>Thanks for pointing out the combustion and explosions are not the the same thing, StingJam! Combustion is a chemical reaction between a fuel and an oxidant that produces heat, while an explosion is a wave of rapidly expanding gases that are created from reacting materials. While both processes are part of an internal combustion engine, it is important to understand the difference between the two. Thanks for your close reading and for WONDERing with us! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1389040" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1389040" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1389040"></div>
+                        </div>
+                        <div class="comment-item" id="C1307121">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/d40c7a8c2d57918047ca3233a3b7799e?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Maan singh</h3>
+                                    <time datetime="2015-03-08 14:53:24">Mar 8, 2015</time>
+                                </div>
+                                <div class="message">
+                                    <p>Does turbo system works to increase the speed or to help the engine get relief</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1307121" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1307121" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1307121"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C1310922">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/9232aee3b0e5641a92f7e079afe53f26?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Wonderopolis</h3>
+                                    <time datetime="2015-03-11 15:31:56">Mar 11, 2015</time>
+                                </div>
+                                <div class="message">
+                                    <p>Great question, Maan singh! Maybe you can do more research at your library. Your WONDER friends would love to hear what you find out! We currently do not have a WONDER about turbo systems, but we encourage our WONDER friends to submit ideas for future WONDER topics. <a href="http://wonderopolis.org/what-are-you-wondering/?showform=true" target="_blank" rel="nofollow">"What are you WONDERing?"</a> Keep up the WONDERful WONDERing! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="1310922" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="1310922" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-1310922"></div>
+                        </div>
+                        <div class="comment-item" id="C295685">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/f8c30abd1eb46491818eb800e238b8ba?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>John</h3>
+                                    <time datetime="2013-05-14 12:02:14">May 14, 2013</time>
+                                </div>
+                                <div class="message">
+                                    <p>This is interesting how you could take the engine and relate it to a potato cannon. Very good.</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="295685" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="295685" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-295685"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C295749">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/92c24b5c4ffeb9092fe41ffb1ae84554?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Wonderopolis</h3>
+                                    <time datetime="2013-05-14 13:00:06">May 14, 2013</time>
+                                </div>
+                                <div class="message">
+                                    <p>Well thank you for telling us how much you enjoyed this Wonder, John! We're glad you visited us today to Wonder about engines. Combustion is SUPER cool to Wonder about! :)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="295749" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="295749" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-295749"></div>
+                        </div>
+                        <div class="comment-item" id="C30848">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/67c233637c1aec95ee9e32dbcf9b23b4?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Steven</h3>
+                                    <time datetime="2012-01-28 16:24:20">Jan 28, 2012</time>
+                                </div>
+                                <div class="message">
+                                    <p>After the combustion why does the gas leave the cylinder and how does the rotor return to starting position?</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="30848" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="30848" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-30848"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C30871">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/98c139bab1d6cce232711ad641d3649c?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Wonderopolis</h3>
+                                    <time datetime="2012-01-28 20:05:19">Jan 28, 2012</time>
+                                </div>
+                                <div class="message">
+                                    <p>Thanks for stopping by this Wonder of the Day®, Steven!  Those are both awesome questions you ask!  Part of the fun of visiting Wonderopolis is that Wonder Friends (like you!) get to learn a little bit about something they WONDER about (like how an engine works), and then take that little bit of knowledge and go on a personal quest to find out even MORE!  We hope you'll WONDER some more on your own about your questions and let us know what you find out...we LOVE to learn new things, too!  :-)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="30871" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="30871" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-30871"></div>
+                        </div>
+                        <div class="comment-item" id="C880">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                    <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/075aa13514be622e61068eb1c35b5bf5?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Paul Hodge</h3>
+                                    <time datetime="2011-01-21 16:35:05">Jan 21, 2011</time>
+                                </div>
+                                <div class="message">
+                                    <p>Cool!  That was cool.</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="880" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="880" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-880"></div>
+                        </div>
+                        <div class="comment-item reply reply1" id="C918">
+                            <div class="comment-wrap">
+                                <div class="header">
+                                        <span class="avatar">
+                        <img src="//www.gravatar.com/avatar/98c139bab1d6cce232711ad641d3649c?s=64&d=mm" alt="">
+                    </span>
+                                    <h3>Wonderopolis</h3>
+                                    <time datetime="2011-01-24 09:17:17">Jan 24, 2011</time>
+                                </div>
+                                <div class="message">
+                                    <p>We're glad you liked this Wonder, Paul!  :-)</p>
+                                </div>
+                                <a class="fnc-open-reply fnc-comment-reply" rel="918" href="#">Reply</a>
+                                <a class="fnc-cancel-reply" rel="918" href="#" style="display: none">cancel</a>
+                            </div>
+                            <div class="fnc-reply-form-918"></div>
+                        </div>
+                        <script>
+
+                            // open form
+                            $('.fnc-comment-reply').click(function (e) {
+                                e.preventDefault();
+
+                                var _this = $(this);
+                                var id = _this.attr('rel');
+                                var _cancel = $('.fnc-cancel-reply[rel=' + id + ']');
+
+                                $('.fnc-reply-form-' + id)
+                                    .hide()
+                                    .load('https://wonderopolis.org/comments/reply' + '/' + id + '/' + 'eyJpdiI6Iis3ZUc0a0NpdlhDTVVYZXNRQU42cnc9PSIsInZhbHVlIjoiTEFXWVI0aXlDeWtDXC8zQXc3N0dWVXg1eGFcL1dCUUxOclVcL3JUZDVKUHRUWGZ6OWYrVTBLRmhTbkV0endIMWdNUTVXUDlkQzNBOGY4OFVNZGpWSU16TWc9PSIsIm1hYyI6ImI5ZWYyMTYyNDE2YWRmZWJhMjNkMTc1ODUyYmQ2MTUxYTg2MzRkNjYwMTQ4OWMxMTU0ZjFhOWRmODc2ZDMwNjQifQ==', function () {
+                                        $(this).slideDown();
+                                    });
+                                _this.addClass('active');
+                                _cancel.addClass('active').fadeIn('slow');
+                            });
+
+
+                            // close the form
+                            $('.fnc-cancel-reply').on('click', function(e){
+                                e.preventDefault();
+
+                                var _this = $(this);
+                                var id = _this.attr('rel');
+                                var _open = $('.fnc-comment-reply[rel=' + id + ']');
+
+                                _this.removeClass('active').fadeOut(function() {
+                                    _open.removeClass('active');
+                                    $('.fnc-reply-form-' + id).slideUp(function() {
+                                        $(this).empty();
+                                    });
+                                });
+
+                            });
+
+
+
+                        </script>
+
+
+
+
+
+
+                    </div>
+
+                    <div class="form-wrap">
+                        <form method="POST" action="https://wonderopolis.org/wonder/how-does-an-engine-work" accept-charset="UTF-8" id="join-the-disqussion" class="standard-form fnc-comment-form"><input name="_token" type="hidden" value="mnxZZO8pvEgeGBP2rGk7252sYVkd2UeCBpAMbARo">
+
+                            <div class="fnc-unexpected-error"></div>
+
+                            <legend>Join the Discussion</legend>
+
+                            <input name="return" type="hidden" value="eyJpdiI6IjhiTUVqMVdoSVwvaGdqdDZOdWlyanRnPT0iLCJ2YWx1ZSI6InYxZnVHUE83ak5mbTJZY1hHUjZSdEdKcXFXUFd1Y0p6V1JON0tyTktSSjhYZ2cwNytcL0ZsaHlReUFiODNjeVJ6aVV5ZjhKZ1owc0NyaUNRVVBPS0NiQT09IiwibWFjIjoiYWViNzQyMTIzYjA4ODA1MTdkODEwMDBhZTA0OTBiNzk2ZjA0MGYwNjI4ZmYxYzliMzk1ZTQ2OTRhZTQ3NTgxNSJ9">
+
+                            <div class="ctrlHolder resume">
+                                <p>Hey, Wonder Friends! We LOVE hearing from you and want you to join our
+                                    Wonder conversation! Before you submit your comment, please remember:</p>
+                                <ol>
+                                    <li>Be respectful. We will not publish comments that bully, tease, or are mean-spirited.</li>
+                                    <li>Stay on topic. Ask yourself, "Does my comment relate to this Wonder of the Day?"</li>
+                                    <li>If you have a question about a new topic, enter it in <a href="https://wonderopolis.org/what-are-you-wondering">What Are You Wondering?</a></li>
+                                </ol>
+                                <p>Comments are subject to approval and may not be published if they are not appropriate for the Wonder discussion. Thanks!</p>
+                            </div>
+                            <div class="ctrlHolder">
+
+                                <label for="author_name">Your Name</label>
+                                <input maxlength="30" placeholder="Enter Name..." name="author_name" type="text" id="author_name">
+                            </div>
+                            <div class="ctrlHolder">
+                                <label for="author_email">Your Email</label>
+                                <input placeholder="Enter Email..." name="author_email" type="text" id="author_email">
+                            </div>
+
+                            <input name="commentable" type="hidden" value="eyJpdiI6IlZMcUtMczBnMHNwWVltemFQblwvWFdBPT0iLCJ2YWx1ZSI6IkozT3R2RGcyVk1HaUV3MWpHZ25ZVXZCbEhKeGdGV0pYMTVHdFBOdjA0MjA9IiwibWFjIjoiNTQ5NDU2YTVhOWUzMTEyMWJhZDFhMGIzODU3NzA0MzkzN2Q0NTk1MTViMGQwMjkwZjBhYmQyMWYzYTdiNTFkOSJ9">
+
+
+                            <div class="ctrlHolder">
+                                <label for="comment">Your Comment</label>
+                                <textarea maxlength="750" placeholder="Write Comment" rows="3" name="comment" cols="50" id="comment"></textarea>
+                            </div>
+
+                            <div class="ctrlHolder">
+                                <script type="text/javascript">
+                                    var RecaptchaOptions = {"curl_timeout":1};
+                                </script>
+                                <script src='https://www.google.com/recaptcha/api.js?render=onload'></script>
+                                <div class="g-recaptcha" data-sitekey="6LfZEQgTAAAAABeU4SxvzKJ3dU5mSCvixvLZMywa"></div>
+                                <noscript>
+                                    <div style="width: 302px; height: 352px;">
+                                        <div style="width: 302px; height: 352px; position: relative;">
+                                            <div style="width: 302px; height: 352px; position: absolute;">
+                                                <iframe src="https://www.google.com/recaptcha/api/fallback?k=6LfZEQgTAAAAABeU4SxvzKJ3dU5mSCvixvLZMywa"
+                                                        frameborder="0" scrolling="no"
+                                                        style="width: 302px; height:352px; border-style: none;">
+                                                </iframe>
+                                            </div>
+                                            <div style="width: 250px; height: 80px; position: absolute; border-style: none;
+                  bottom: 21px; left: 25px; margin: 0px; padding: 0px; right: 25px;">
+        <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 80px; border: 1px solid #c1c1c1;
+                         margin: 0px; padding: 0px; resize: none;" value="">
+        </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </noscript>
+                            </div>
+
+                            <div class="ctrlHolder">
+                                <input class="button green fnc-submit-button" type="submit" value="Post Comment">
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <script>
+
+                        var commentFormConfig = {
+                            errorMsgTag: 'p',
+                            errorMsgClass: 'hint form-error'
+
+                        };
+
+
+
+                        $('.fnc-submit-button').on('click', function (e) {
+                            $(this).prop('disabled', true);
+                            $(this).parents('.fnc-comment-form').submit()
+                        });
+                        $('.fnc-comment-form').on('submit', function (e) {
+
+                            e.preventDefault();
+                            var _form = $(this);
+
+                            $('.fnc-submit-button', _form).prop('disabled', true);
+
+                            $.ajax({
+                                url: 'https://wonderopolis.org/comment',
+                                data: _form.serialize(),
+                                type: 'post',
+                                dataType: 'json',
+                                beforeSend: function () {
+
+                                },
+                                success: function (r) {
+                                    $('.ctrlHolder', _form).removeClass('error');
+                                    $('.form-error', _form).remove();
+
+                                    if (r.success == false) {
+
+
+                                        // show errors
+                                        if (r.errors) { // validation errors
+                                            $.each(r.errors, function (index, error) {
+
+                                                $('<' + commentFormConfig.errorMsgTag + ' class="' + commentFormConfig.errorMsgClass + '">' + error + '</' + commentFormConfig.errorMsgTag + '>')
+                                                    .insertAfter(".fnc-comment-form [name='" + index + "']")
+                                                    .hide()
+                                                    .slideDown()
+                                                    .closest('.ctrlHolder')
+                                                    .addClass('error');
+                                            });
+                                            $('.fnc-submit-button', _form).prop('disabled', false);
+                                        } else if (r.unexpected_error) {
+                                            $('.fnc-unexpected-error').append('<p class="alert alert-danger">' + r.unexpected_error + '<p>').slideDown();
+                                        }
+
+                                    } else {
+                                        // success
+                                        $("[type!='hidden'][type!='submit']", _form).val('');
+                                        location.href = r.return;
+                                        location.reload();
+                                    }
+                                }
+                            });
+                        });
+                    </script> </div>
+
+
+                <script>
+                    var hash = location.hash.replace('#','');
+
+                    if(hash == 'comment-moderation' || hash.match('^C') || hash.match('comments')) {
+                        $('#comment-container').show();
+                        $('#container').addClass('hashtag');
+                    }
+
+                    $(window).load(function(){
+
+                        if(hash != '') {
+                            $('html, body').animate({ scrollTop: $('#' + hash).offset().top}, 1000);
+                        }
+                    });
+                </script>
+            </section>
+
+            <section class="more-wonders">
+
+                <div class="wrap">
+
+                    <h1>Related Wonders for You to Explore</h1>
+
+                    <div class="row">
+
+                        <div class="item left">
+                            <a href="https://wonderopolis.org/wonder/what-is-a-steamboat" class="img-wrap">
+                                <div class="img-wrap">
+                                    <img src="/_img?img=/wp-content/uploads/2018/01/Steamboatdreamstime_l_79079764.jpg&transform=resizeCrop,210,130" alt="">
+                                    <span class="a-overlay">#2055</span>
+                                </div>
+                                <p><span>What Is a Steamboat?</span></p>
+                            </a>
+                        </div>
+                        <div class="item left">
+                            <a href="https://wonderopolis.org/wonder/why-dont-all-cars-have-fuel-doors-on-the-same-side" class="img-wrap">
+                                <div class="img-wrap">
+                                    <img src="/_img?img=/wp-content/uploads/2018/01/Cars_Fuel_Doorsdreamstime_l_55047556.jpg&transform=resizeCrop,210,130" alt="">
+                                    <span class="a-overlay">#2054</span>
+                                </div>
+                                <p><span>Why Don’t All Cars Have Fuel Doors on the Same Side?</span></p>
+                            </a>
+                        </div>
+                        <div class="item left">
+                            <a href="https://wonderopolis.org/wonder/who-invented-action-figures" class="img-wrap">
+                                <div class="img-wrap">
+                                    <img src="/_img?img=/wp-content/uploads/2017/12/action_figuresdreamstime_xl_57057893.jpg&transform=resizeCrop,210,130" alt="">
+                                    <span class="a-overlay">#2049</span>
+                                </div>
+                                <p><span>Who Invented Action Figures?</span></p>
+                            </a>
+                        </div>
+                        <div class="item left">
+                            <a href="https://wonderopolis.org/wonder/how-does-a-crane-work" class="img-wrap">
+                                <div class="img-wrap">
+                                    <img src="/_img?img=/wp-content/uploads/2017/12/Cranedreamstime_xl_43929032.jpg&transform=resizeCrop,210,130" alt="">
+                                    <span class="a-overlay">#2046</span>
+                                </div>
+                                <p><span>How Does a Crane Work?</span></p>
+                            </a>
+                        </div>
+                        <div class="item left">
+                            <a href="https://wonderopolis.org/wonder/can-you-code" class="img-wrap">
+                                <div class="img-wrap">
+                                    <img src="/_img?img=/wp-content/uploads/2017/11/Codedreamstime_xl_77592238.jpg&transform=resizeCrop,210,130" alt="">
+                                    <span class="a-overlay">#2035</span>
+                                </div>
+                                <p><span>Can You Code?</span></p>
+                            </a>
+                        </div>
+
+                        <div class="item left last">
+                            <div class="img-wrap">
+                                <a target="_blank" id="donate" href="https://wonderopolis.org/donate"><span><img src="https://wonderopolis.org/html/images/library/donate.gif" alt=""><img class="hover" src="https://wonderopolis.org/html/images/library/donate_hover.gif" alt=""></span></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <div id="WordChallenge" style="display: none;">
+                <a href="javascript:void(0);" onclick="$.fancybox.close();" class="for-small close-modal">Quit</a>
+                <a href="#dummy" class="for-small select-word">Select a Word</a>
+
+                <div class="wrap">
+
+                    <div class="header">
+                        <p>#110</p>
+
+                        <h3>How Does an Engine Work?</h3>
+                    </div>
+
+                    <div class="body">
+
+                        <a href="javascript:void(0);" onclick="$.fancybox.close();" class="for-big close-modal">Quit</a>
+
+                        <div class="start-challenge">
+
+                            <p class="hint for-big"><span class="orange">Drag</span> a word to its <span class="green">definition</span></p>
+
+                            <p class="for-small"><span class="orange">Word</span><span class="green">Match</span></p>
+
+                            <div class="tab-wrap">
+
+                                <div class="tab tab-word fnc-words">
+                                    <p class="for-small">Select a Wonder Word:</p>
+
+                                    <div class="draggable-wrap" id="fnc-drag-word-966">
+                                    <span id="word-966" data-id="966" class="draggable ui-widget-content">
+                                        <span>exhaust</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-959">
+                                    <span id="word-959" data-id="959" class="draggable ui-widget-content">
+                                        <span>enclosed</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-965">
+                                    <span id="word-965" data-id="965" class="draggable ui-widget-content">
+                                        <span>compression</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-969">
+                                    <span id="word-969" data-id="969" class="draggable ui-widget-content">
+                                        <span>muffler</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-962">
+                                    <span id="word-962" data-id="962" class="draggable ui-widget-content">
+                                        <span>propel</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-26649">
+                                    <span id="word-26649" data-id="26649" class="draggable ui-widget-content">
+                                        <span>motion</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-957">
+                                    <span id="word-957" data-id="957" class="draggable ui-widget-content">
+                                        <span>explosion</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-963">
+                                    <span id="word-963" data-id="963" class="draggable ui-widget-content">
+                                        <span>stroke</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-960">
+                                    <span id="word-960" data-id="960" class="draggable ui-widget-content">
+                                        <span>piston</span>
+                                    </span>
+                                    </div>
+                                    <div class="draggable-wrap" id="fnc-drag-word-970">
+                                    <span id="word-970" data-id="970" class="draggable ui-widget-content">
+                                        <span>tailpipe</span>
+                                    </span>
+                                    </div>
+                                </div>
+
+                                <div class="tab tab-definition fnc-shuffle fnc-descs">
+                                    <p class="for-small word-here"></p>
+
+                                    <p class="for-small">Match its definition:</p>
+                                    <div id="definition-966" data-id="966" class="droppable ui-widget-header fnc-desc">
+                                        <span>the smoke or gas given off by an engine</span>
+                                    </div>
+                                    <div id="definition-959" data-id="959" class="droppable ui-widget-header fnc-desc">
+                                        <span>closed in or surrounded or included within</span>
+                                    </div>
+                                    <div id="definition-965" data-id="965" class="droppable ui-widget-header fnc-desc">
+                                        <span>the reduction in volume and increase in pressure of air or air mixed with fuel in the cylinder of an internal combustion engine prior to ignition, or the engine cycle in which this process takes place</span>
+                                    </div>
+                                    <div id="definition-969" data-id="969" class="droppable ui-widget-header fnc-desc">
+                                        <span>a tubular acoustic device inserted in the exhaust system that is designed to reduce noise</span>
+                                    </div>
+                                    <div id="definition-962" data-id="962" class="droppable ui-widget-header fnc-desc">
+                                        <span>cause to move forward with force</span>
+                                    </div>
+                                    <div id="definition-26649" data-id="26649" class="droppable ui-widget-header fnc-desc">
+                                        <span>the action or process of moving or being moved</span>
+                                    </div>
+                                    <div id="definition-957" data-id="957" class="droppable ui-widget-header fnc-desc">
+                                        <span>a violent release of energy caused by a chemical or nuclear reaction</span>
+                                    </div>
+                                    <div id="definition-963" data-id="963" class="droppable ui-widget-header fnc-desc">
+                                        <span>the maximum movement available to a pivoted or reciprocating piece by a cam</span>
+                                    </div>
+                                    <div id="definition-960" data-id="960" class="droppable ui-widget-header fnc-desc">
+                                        <span>a part of an engine or some other machine that moves up and down within a tight sleeve in order to make the machine work.</span>
+                                    </div>
+                                    <div id="definition-970" data-id="970" class="droppable ui-widget-header fnc-desc">
+                                        <span>a pipe carrying fumes from the muffler to the rear of a car</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- #start-challenge end -->
+
+                        <div class="end-challenge">
+                            <p class="for-small"><span class="orange">Word</span><span class="green">Match</span></p>
+
+                            <h2>Congratulations!</h2>
+
+                            <p class="border">You’ve matched all of the definitions correctly.</p>
+
+                            <div class="share-block right">
+                                <h5>Share results</h5>
+
+                                <div class="addthis_sharing_toolbox"></div>
+                            </div>
+                            <div class="left">
+                                <a href="#" class="fnc-play-again button green">Play Again</a>
+                                <a href="javascript:void(0);" onclick="$.fancybox.close();" class="for-small close-modal">Quit</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div><!-- #WordChallenge end -->
+
+            <script>
+                var challengeCounter = 5;
+                var cntReset = 5;
+                var wordIndex = [];
+                wordIndex[0] = 966;
+                wordIndex[1] = 959;
+                wordIndex[2] = 965;
+                wordIndex[3] = 969;
+                wordIndex[4] = 962;
+                wordIndex[5] = 26649;
+                wordIndex[6] = 957;
+                wordIndex[7] = 963;
+                wordIndex[8] = 960;
+                wordIndex[9] = 970;
+
+                //call the function at the beginning
+                randWords();
+
+                function randWords()
+                {
+                    var arr = wordIndex.slice();
+                    var cnt = 1;
+                    var key;
+                    $('.draggable-wrap').hide();
+                    $('.fnc-desc').hide();
+
+                    while (arr.length && cnt <= cntReset) {
+                        key = arr.splice(Math.floor(Math.random() * arr.length), 1)[0];
+                        $('#fnc-drag-word-' + key).show();
+                        $('#definition-' + key).show();
+                        cnt++;
+                    }
+
+                }
+
+            </script>
+            <script>var quizCounter = 3;</script>
+            <div id="Quiz" style="display: none;">
+
+                <div class="wrap">
+
+                    <div class="header">
+                        <p>#110</p>
+
+                        <h3>How Does an Engine Work?</h3>
+                    </div>
+
+                    <div class="body">
+
+                        <div class="block-wrap">
+
+
+                            <div class="block question-1  visible ">
+
+                                <a href="javascript:void(0);" onclick="$.fancybox.close();" class="close-modal">Quit</a>
+
+                                <p class="top">Question <b>1</b> of <b>3</b></p>
+
+                                <h3>Internal combustion engines use what to generate the power needed to move your car?</h3>
+
+                                <ul class="answers">
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>a</span></span><span class="answer-line">neutrons</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                    <li class="true">
+                                        <a href="#"><span class="letter"><span>b</span></span><span class="answer-line">explosions</span></a>
+                                        <span>Correct!</span>
+                                    </li>
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>c</span></span><span class="answer-line">tools</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>d</span></span><span class="answer-line">formulas</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                </ul>
+
+                                <div class="info">
+                                    <a href="#" class="button green next">Next Question</a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="block question-2 ">
+
+                                <a href="javascript:void(0);" onclick="$.fancybox.close();" class="close-modal">Quit</a>
+
+                                <p class="top">Question <b>2</b> of <b>3</b></p>
+
+                                <h3>The combustion cycle in car engines features how many strokes?</h3>
+
+                                <ul class="answers">
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>a</span></span><span class="answer-line">one</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>b</span></span><span class="answer-line">two</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>c</span></span><span class="answer-line">three</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                    <li class="true">
+                                        <a href="#"><span class="letter"><span>d</span></span><span class="answer-line">four</span></a>
+                                        <span>Correct!</span>
+                                    </li>
+                                </ul>
+
+                                <div class="info">
+                                    <a href="#" class="button green next">Next Question</a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="block question-3 ">
+
+                                <a href="javascript:void(0);" onclick="$.fancybox.close();" class="close-modal">Quit</a>
+
+                                <p class="top">Question <b>3</b> of <b>3</b></p>
+
+                                <h3>Which of the following is NOT one of the four cycles of an internal combustion engine?</h3>
+
+                                <ul class="answers">
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>a</span></span><span class="answer-line">intake</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>b</span></span><span class="answer-line">compression</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                    <li class="false">
+                                        <a href="#"><span class="letter"><span>c</span></span><span class="answer-line">exhaust</span></a>
+                                        <span>Not Quite!</span>
+                                    </li>
+                                    <li class="true">
+                                        <a href="#"><span class="letter"><span>d</span></span><span class="answer-line">filter</span></a>
+                                        <span>Correct!</span>
+                                    </li>
+                                </ul>
+
+                                <div class="info">
+                                    <a href="#" class="button green next">See your results</a>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="block last">
+
+                                <a href="javascript:void(0);" onclick="$.fancybox.close();" class="close-modal">Exit</a>
+
+                                <p class="top">Quiz Results</p>
+
+                                <div class="border">
+                                    <div class="left">
+                                        <h3 id="fnc-result">Not Bad</h3>
+
+                                        <p>You have answered <b id="fnc-num-answered">0</b> of <b>3</b> questions correctly and your score is:
+                                    </div>
+                                    <div class="right">
+                                        <p id="fnc-score"></p>
+                                    </div>
+                                </div>
+
+                                <div class="bottom">
+                                    <div class="right">
+                                        <h5>Share Results</h5>
+
+                                        <div class="addthis_sharing_toolbox"></div>
+                                    </div>
+                                    <div class="left">
+                                        <a href="#" class="button green" id="fnc-re-quiz">Retake The Quiz</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div><!-- #Quiz end -->
+
+
+
+
+            <div class="reveal-modal-bg main" style="display: none;"></div>
+
+        </main>
+
+        <section id="subscribe-modal" class="spread-the-joy reveal-modal" data-reveal>
+
+            <a class="close-reveal-modal">&#215;</a>
+
+            <div class="row heading">
+                <h1>Spread the Joy of Wonder</h1>
+            </div>
+
+            <div class="row spread">
+
+                <div class="large-3 medium-6 small-12 columns subscribe">
+                    <h4>GET YOUR WONDER DAILY</h4>
+                    <p>Subscribe to Wonderopolis and receive
+                        the Wonder of the Day® via email or SMS</p>
+                    <div id="subscribe-form">
+
+                        <div class="ctrlHolder">
+                            <form id="subscribe-form" action="//wonderopolis.us7.list-manage.com/subscribe/post?u=3b5f3475c557c16912ddc471c&amp;id=ddff26f800" method="post" target="popupwindow" _lpchecked="1">
+                                <input type="hidden" value="wonderopolis/VSgn" name="uri"><input type="hidden" name="loc" value="en_US">
+                                <input id="email-subscribe" type="email" name="EMAIL" required placeholder="Enter Your Email">
+                                <input class="button small red" type="submit" value="Subscribe"><!--/subscribe-form-submit-->
+                            </form>
+                        </div>
+
+
+                        <span>or</span>
+
+                        <div class="ctrlHolder">
+                            <input id="phone-subscribe-2" type="tel" placeholder="Enter Your Mobile #">
+                            <input class="button small red" id="phone-submit-modal" type="submit" value="Subscribe">
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <div class="large-3 medium-6 small-12 columns social">
+                    <h4>Join the Buzz</h4>
+                    <p>Don’t miss our special deals, gifts and promotions. Be the first to know!</p>
+                    <ul class="social">
+                        <li class="twitter"><a href="https://twitter.com/wonderopolis">twitter</a></li>
+                        <li class="facebook"><a href="https://www.facebook.com/wonderopolis?v=wall&ref=sgm">facebook</a></li>
+                        <li class="pinterest"><a href="http://pinterest.com/wonderopolis/">pinterest</a></li>
+                        <li class="youtube"><a href="http://www.youtube.com/user/WonderopolisWonders?feature=mhum">youtube</a></li>
+                        <li class="instagram"><a href="https://www.instagram.com/wonderopolis/">instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="large-3 medium-6 small-12 columns share">
+                    <h4>Share with the World</h4>
+                    <p>Tell everybody about Wonderopolis and its wonders.</p>
+                    <div class="add-this-plugin">
+                        <h6>Share Wonderopolis</h6>
+                        <div class="addthis_sharing_toolbox"></div>
+                        <!--             <a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=http%3A%2F%2Fwww.addthis.com&pubid=ra-553a3869648acb18&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
+                                        <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=http%3A%2F%2Fwww.addthis.com&pubid=ra-553a3869648acb18&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
+                                        <a href="https://api.addthis.com/oexchange/0.8/forward/pinterest/offer?url=http%3A%2F%2Fwww.addthis.com&pubid=ra-553a3869648acb18&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/pinterest.png" border="0" alt="Pinterest"/></a>
+                                        <a href="https://www.addthis.com/bookmark.php?source=tbx32nj-1.0&v=300&url=http%3A%2F%2Fwww.addthis.com&pubid=ra-553a3869648acb18&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/addthis.png" border="0" alt="Addthis"/></a>
+                        -->
+                    </div>
+                </div>
+
+                <div class="large-3 medium-6 small-12 columns widget">
+                    <h4>Wonderopolis Widget</h4>
+                    <p>Interested in sharing Wonderopolis® every day? Want to add a little wonder to your website? Help spread the wonder of families learning together.</p>
+                    <a href="https://wonderopolis.org/get-widget" class="button small red">Add widget</a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-550c7a312e3a54f6" async="async"></script>
+        <script>
+            $(document).ready(function () {
+                $('#phone-submit-modal').click(function (){
+                    var phone = $('#phone-subscribe-2').val();
+
+                    if(($.isNumeric( phone ) == true) && (phone.length>6)){
+
+                        var n = phone.indexOf("+");
+                        if(n!=0){
+                            phone = "+1"+phone;
+                        }
+
+                        $.ajax({
+                            type: "GET",
+                            url: "https://wonderopolis.org/phones/subscribe",
+                            data: {phone: phone,action: 1},
+
+                            success: function (r) {
+                                if(r=='ok'){
+                                    $('#subscribe-message').removeClass('error').addClass('success').html('<p>We sent you SMS, for complete subscription please reply.</p>').fadeIn().delay(4000).fadeOut();
+                                }else if(r == 'Update'){
+                                    $('#subscribe-message').removeClass('error').addClass('success').html('<p>Thank you for subscribing to Wonderopolis.</p>').fadeIn().delay(4000).fadeOut();
+                                } else {
+                                    $('#subscribe-message').removeClass('success').addClass('error').html('<p>Please check phone '+r+' is not valid phone number.</p>').fadeIn().delay(4000).fadeOut();
+                                }
+                            }
+                        });
+                    }
+
+
+                });
+            });
+        </script>
+        <footer id="footer">
+
+            <div class="row">
+
+                <div class="medium-4 large-4 columns">
+                    <a href="https://wonderopolis.org" id="footer-logo"><span><img src="https://wonderopolis.org/html/images/layout/logo_footer.png" alt="Wonderopolis logo"></span></a>
+                    <form id="footer-search-form" class="radius-form" action="https://wonderopolis.org/wonders" method="get">
+                            <span class="input-wrap">
+                     <input class="radius" type="text" name="q"  placeholder="Search Wonders...">
+                </span>
+                        <span class="btn-wrap"><input id="footer-search-btn" class="circle" type="submit" value="submit"></span>
+                    </form>
+                </div><!-- .large-4 end -->
+
+                <div class="medium-6 large-6 columns">
+                    <nav id="footer-primary-nav">
+                        <ul>
+                            <li class=""><a href="https://wonderopolis.org"><b></b><span>Home</span></a></li>
+                            <li><a class="play-btn various fancybox.ajax" href="https://wonderopolis.org/html/inc/video.html"><b></b><span>WHAT'S NEW</span></a></li>
+                            <li class=""><a href="https://wonderopolis.org/wonders"><b></b><span>Explore wonders</span></a></li>
+                            <li class=""><a href="http://wg.wonderopolis.org" target="_blank"><b></b><span>Wonder Ground</span></a></li>
+                            <li class=""><a href="https://wonderopolis.org/what-are-you-wondering"><b></b><span>What are you wondering?</span></a></li>
+                            <li class="wonderopolis-store"><a href="https://store.wonderopolis.org" target="_blank"><b></b><span>Wonderopolis Store</span></a></li>
+                            <li><a href="http://camp.wonderopolis.org" target="_blank"><b></b><span>Camp Wonderopolis</span></a></li>
+                            <li><a href="https://wonderopolis.org/donate"><b></b><span>Donate</span></a></li>
+
+                        </ul>
+                    </nav>
+                </div><!-- .large-6 end -->
+
+                <div class="medium-2 large-2 columns">
+                    <nav id="footer-secondary-nav">
+                        <ul>
+                            <li class=""><a href="https://wonderopolis.org/about">About</a></li>
+                            <li class=""><a href="https://wonderopolis.org/get-widget">Get Widget</a></li>
+                            <li class=""><a href="https://wonderopolis.org/wonder-jar">Wonder Jar</a></li>
+                            <li class=""><a href="https://wonderopolis.org/hotspots">Wonder Hotspots</a></li>
+                            <li class=""><a href="https://wonderopolis.org/contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div><!-- .large-2 end -->
+
+            </div>
+
+            <div class="row">
+                <div class="medium-6 large-6 columns">
+                    <p>2014–2018 &copy; National Center for Families Learning</p>
+                </div>
+                <div class="medium-6 large-6 columns">
+                    <ul class="inline-list right">
+                        <li><a href="https://wonderopolis.org/pages/legal-privacy">Legal & Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </footer>
+
+        <script src="https://wonderopolis.org/html/js/min/jquery.fancybox.min.js"></script>
+        <script src="https://wonderopolis.org/html/js/foundation/min/foundation.min.js"></script>
+        <script src="https://wonderopolis.org/html/js/foundation/min/foundation.offcanvas.min.js"></script>
+        <script src="https://wonderopolis.org/html/js/foundation/min/foundation.reveal.min.js"></script>
+        <script src="https://wonderopolis.org/html/js/min/jquery.dotdotdot.min.js"></script>
+        <script src="https://wonderopolis.org/html/js/min/helper.min.js"></script>
+
+
+        <script>
+
+            $(document).foundation({
+                offcanvas : {
+                    open_method: 'move',
+                    close_on_click : false
+                }
+            });
+
+
+            $(window).load(function() {
+
+                $('body').removeClass('loading');
+
+            });
+
+
+        </script>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<script src="https://wonderopolis.org/html/js/min/jquery-ui.min.js"></script>
+<script src="https://wonderopolis.org/html/js/min/jquery.ui.touch-punch.min.js"></script>
+
+<script src="https://wonderopolis.org/html/js/wonder.js"></script>
+
+<script src="https://wonderopolis.org/html/js/foundation/min/foundation.tooltip.min.js"></script>
+<script src="https://wonderopolis.org/html/js/min/classie.min.js"></script>
+<script src="https://wonderopolis.org/html/js/min/modalEffects.min.js"></script>
+<script src="https://wonderopolis.org/html/js/min/jquery.fancybox.min.js"></script>
+<script src="https://wonderopolis.org/html/js/min/jquery.rating.min.js"></script>
+
+<script src="https://wonderopolis.org/html/js/wonder.js"></script>
+<script src="https://wonderopolis.org/html/js/Quiz.Challenge.js"></script>
+
+
+<script>
+
+    $(document).foundation({
+        tooltip: {
+            selector : '.has-tip',
+            additional_inheritable_classes : [],
+            tooltip_class : '.tooltip',
+            touch_close_text: 'tap to close',
+            disable_for_touch: false,
+            tip_template : function (selector, content) {
+                return '<span data-selector="' + selector + '" class="'
+                    + Foundation.libs.tooltip.settings.tooltip_class.substring(1)
+                    + '">' + content + '<span class="nub"></span></span>';
+            }
+        }
+
+    });
+
+    $(document).ready(function() {
+        $('.auto-submit-star').rating({
+            default: 4,
+            callback: function(value, link){
+                $.post('https://wonderopolis.org/wonder/rate/2792', {"rating": value}, function (data) {
+                    $('.auto-submit-star').rating('disable');
+                    $('.rating-info').text(data);
+                });
+            }
+        });
+
+
+        $('.fnc-list').click(function(e){
+            e.preventDefault();
+            $('a.word').removeClass('active');
+            $('.' + $(this).data('w-selector')).parent('a').toggleClass('active');
+        });
+
+    });
+
+
+
+    $(document).ready(function(){
+        $('.fnc-show-all-tag').click(function(){
+            $(this).fadeOut();
+            $(this).parent().addClass('show-all');
+            return false
+        });
+        // $('.print-save').click(function(){
+        //     $('body').addClass('print-only-try-it-out');
+        // });
+
+
+        $('.fnc-scroll-comments').click(function() {
+            $('#comment-container').show();
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 800);
+                return false;
+            }
+        });
+
+    });
+
+</script>
+
+<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-550c7a312e3a54f6" async="async"></script> -->
+
+<div id="successModal" class="md-modal md-effect-5 success">
+    <div class="md-content">
+        <h2>You Got It!</h2>
+        <img src="https://wonderopolis.org/html/images/library/check-mark.png" alt="">
+        <h3></h3>
+        <p></p>
+        <a class="md-close continue button green">Continue</a>
+    </div>
+</div>
+
+<div class="md-overlay"></div>
+
+<div id="errorModal" class="md-modal md-effect-5 error">
+    <div class="md-content">
+        <h2>Not Quite!</h2>
+        <img src="https://wonderopolis.org/html/images/library/x-mark.png" alt="">
+        <a class="md-close try-again">Try Again</a>
+    </div>
+</div>
+
+<div class="md-overlay"></div>
+
+
+<script>
+    $('#funder-banner .fnc-close-msg').click(function(){
+        $(this).closest('.cta-msg').removeClass('.visible').delay(100).remove();
+        return false;
+    });
+</script>
+
+
+
+<p class="for-print" style="display: none">http://wonderopolis.org/wonder/how-does-an-engine-work</p>
+<p class="for-print" style="display: none">© National Center for Families Learning (NCFL)</p>
+
+
+<!-- Fancybox -->
+
+<!-- <script src="https://wonderopolis.org/html/js/min/jquery.fancybox.min.js"></script>
+ -->
+<!-- NEW SUBSCRIBE MODAL -->
+
+<script>
+    $("#fnc-subscribe-modal").fancybox({
+        wrapCSS: 'subscribe-modal',
+        afterShow: function(){
+            $('body').css('overflow-y','hidden');
+        },
+        afterClose: function(){
+            $('body').css('overflow-y','');
+        }
+    }).trigger('click');
+</script>
+
+<!-- NEW SUBSCRIBE MODAL end -->
+</body>
+</html>
+
+Finished with 0 of 245
+Found 0 chunks
+
+Process finished with exit code 0

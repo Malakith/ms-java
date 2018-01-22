@@ -1,0 +1,8 @@
+colour, 85
+colour		O		2		[car, colour]
+colour		O		1		[colour]
+colour		O		2		[colour]
+colour		O		9		[colour]
+colour		O		9		[colour]
+colour		O		3		[colour]
+colour		O		1		[paint, colour]

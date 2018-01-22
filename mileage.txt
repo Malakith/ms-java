@@ -1,0 +1,10 @@
+mileage, 85
+Mileage		O		2		[Fuel, Mileage]
+Mileage		O		2		[Increase, Fuel, Mileage]
+Mileage		O		4		[Mileage]
+Mileage		O		1		[Mileage]
+Mileage		O		1		[Mileage]
+mileage		O		1		[car, mileage]
+mileage		O		5		[mileage]
+mileage		O		1		[mileage]
+mileage		O		2		[mileage]
